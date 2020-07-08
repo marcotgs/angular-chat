@@ -15,7 +15,7 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "git diff HEAD --quiet && ng test --watch=false --code-coverage"
+      "pre-push": "git diff HEAD --quiet && ng test --watch=false --code-coverage --browsers=ChromeHeadless"
     }
   },
   "lint-staged": {
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@angular/animations": "~10.0.2",
+    "@angular/cdk": "^9.0.0",
     "@angular/common": "~10.0.2",
     "@angular/compiler": "~10.0.2",
     "@angular/core": "~10.0.2",
@@ -33,6 +34,11 @@
     "@angular/platform-browser": "~10.0.2",
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
+    "@nebular/eva-icons": "^5.1.0",
+    "@nebular/theme": "^5.1.0",
+    "@ngrx/store": "1.2.1",
+    "bootstrap": "^4.5.0",
+    "eva-icons": "^1.1.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -43,6 +49,7 @@
     "@angular/compiler-cli": "~10.0.2",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@schematics/angular": "~10.0.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
