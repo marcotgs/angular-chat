@@ -90,7 +90,12 @@
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "codeCoverageExclude": [
+              "/**/*mock*.ts",
+              "src/**/index.ts",
+              "src/**/*.state.ts"
+            ]
           }
         },
         "lint": {

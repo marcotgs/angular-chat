@@ -1,9 +1,5 @@
 import { Message } from '@shared/models';
-import {
-  addMessageSuccess,
-  readMessages,
-  readMessagesSuccess,
-} from '../actions';
+import { addMessageSuccess, readMessagesSuccess, setPerson } from '../actions';
 import { chatReducer } from './chat.reducer';
 import { PERSON } from '@shared/constants';
 
@@ -42,6 +38,20 @@ describe('ChatReducer', () => {
       ),
     ).toEqual({
       messages: [{ ...messages[0], read: true }, messages[1]],
+    });
+  });
+
+  it('should set messages as read', () => {
+    chatReducer(
+      { messages },
+      readMessagesSuccess({ personId: PERSON.FIRST_PERSON.id }),
+    );
+
+    expect(
+      chatReducer({ messages }, setPerson({ person: PERSON.SECOND_PERSON })),
+    ).toEqual({
+      messages,
+      currentPerson: PERSON.SECOND_PERSON,
     });
   });
 });

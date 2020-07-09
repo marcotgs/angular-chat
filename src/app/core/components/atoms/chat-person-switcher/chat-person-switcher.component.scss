@@ -1,0 +1,7 @@
+nb-action {
+  cursor: pointer;
+  font-weight: normal;
+  &.active {
+    font-weight: 700;
+  }
+}

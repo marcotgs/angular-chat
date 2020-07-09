@@ -1,0 +1,24 @@
+<div class="container-fluid container-lg">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <nb-actions size="medium">
+        <nb-action
+          [ngClass]="{
+            active: (currentPerson | async)?.id === persons.FIRST_PERSON.id
+          }"
+          (click)="changePerson(persons.FIRST_PERSON)"
+        >
+          {{ persons.FIRST_PERSON.name }}
+        </nb-action>
+        <nb-action
+          [ngClass]="{
+            active: (currentPerson | async)?.id === persons.SECOND_PERSON.id
+          }"
+          (click)="changePerson(persons.SECOND_PERSON)"
+        >
+          {{ persons.SECOND_PERSON.name }}
+        </nb-action>
+      </nb-actions>
+    </div>
+  </div>
+</div>

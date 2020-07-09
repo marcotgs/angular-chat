@@ -20,6 +20,15 @@ $nb-themes: nb-register-theme(
 
 //override default theme css
 .nb-theme-dark nb-layout {
+  nb-layout-header {
+    nav {
+      align-items: inherit;
+      justify-content: inherit;
+      display: block;
+      padding-bottom: 0.5rem;
+      padding-top: 2rem;
+    }
+  }
   .layout {
     .layout-container {
       .content {

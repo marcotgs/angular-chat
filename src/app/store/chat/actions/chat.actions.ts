@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Message } from '@shared/models';
 import { ChatActionsTypes } from '../chat.types';
+import { Person } from '@shared/models/person';
 
 export const addMessage = createAction(
   ChatActionsTypes.AddMessage,
@@ -20,4 +21,9 @@ export const readMessages = createAction(
 export const readMessagesSuccess = createAction(
   ChatActionsTypes.ReadMessagesSuccess,
   props<{ personId: number }>(),
+);
+
+export const setPerson = createAction(
+  ChatActionsTypes.SetPerson,
+  props<{ person: Person }>(),
 );
