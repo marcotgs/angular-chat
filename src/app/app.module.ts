@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PagesModule } from '@pages/pages.module';
+import { StoreModule } from '@store/store.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { PagesModule } from '@pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    StoreModule,
     PagesModule,
   ],
   providers: [],

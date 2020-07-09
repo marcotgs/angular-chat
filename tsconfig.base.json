@@ -20,7 +20,8 @@
     "paths": {
       "@components/*": ["src/app/core/components/*"],
       "@pages/*": ["src/app/core/pages/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@shared/*": ["src/app/shared/*"],
+      "@store/*": ["src/app/store/*"]
     }
   },
   "angularCompilerOptions": {
