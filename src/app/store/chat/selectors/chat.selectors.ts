@@ -8,3 +8,8 @@ export const selectChatCurrentPerson = createSelector(
   selectChat,
   (state) => state.currentPerson as Person,
 );
+
+export const selectChatMessages = createSelector(
+  selectChat,
+  (state) => state.messages,
+);

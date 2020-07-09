@@ -16,14 +16,14 @@ const _chatReducer = createReducer(
   initialState,
   on(addMessageSuccess, (state, { type, ...payload }) => ({
     ...state,
-    messages: [...state.messages, payload],
+    messages: [...state.messages, { ...payload, person: state.currentPerson }],
   })),
 
   on(readMessagesSuccess, (state, payload) => {
     return {
       ...state,
       messages: state.messages.map((message) =>
-        !message.read && message.person.id === payload.personId
+        !message.read && message?.person?.id === payload.personId
           ? { ...message, read: true }
           : message,
       ),

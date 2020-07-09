@@ -1,20 +1,29 @@
-<div class="container-fluid container-lg">
-  <div class="row">
-    <div class="col-10 col-sm-11 pl-0 pr-1 pr-lg-3">
-      <input
-        type="text"
-        shape="round"
-        nbInput
-        fullWidth
-        placeholder="Type your message..."
-      />
-    </div>
-    <div
-      class="col-2 col-sm-1 p-0 d-flex justify-content-center justify-content-lg-start"
-    >
-      <button nbButton medium shape="round">
-        <nb-icon icon="paper-plane-outline"></nb-icon>
-      </button>
+<form [formGroup]="chatForm" (ngSubmit)="onSubmit()">
+  <div class="container-fluid container-lg">
+    <div class="row">
+      <div class="col-10 col-sm-11 pl-0 pr-1 pr-lg-3">
+        <input
+          type="text"
+          shape="round"
+          nbInput
+          fullWidth
+          placeholder="Type your message..."
+          formControlName="message"
+        />
+      </div>
+      <div
+        class="col-2 col-sm-1 p-0 d-flex justify-content-center justify-content-lg-start"
+      >
+        <button
+          nbButton
+          medium
+          shape="round"
+          type="submit"
+          [disabled]="chatForm.invalid"
+        >
+          <nb-icon icon="paper-plane-outline"></nb-icon>
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</form>

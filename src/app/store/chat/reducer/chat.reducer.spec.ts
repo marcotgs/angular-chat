@@ -19,8 +19,12 @@ describe('ChatReducer', () => {
 
   it('should add new message to state', () => {
     expect(
-      chatReducer({ messages: [] }, addMessageSuccess(messages[0])),
+      chatReducer(
+        { messages: [], currentPerson: PERSON.FIRST_PERSON },
+        addMessageSuccess(messages[0]),
+      ),
     ).toEqual({
+      currentPerson: PERSON.FIRST_PERSON,
       messages: [messages[0]],
     });
   });

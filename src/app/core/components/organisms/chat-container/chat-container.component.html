@@ -1,5 +1,5 @@
-<nb-card>
+<nb-card *ngFor="let messageBody of messages$ | async">
   <nb-card-body>
-    Card
+    {{ messageBody?.message }}
   </nb-card-body>
 </nb-card>

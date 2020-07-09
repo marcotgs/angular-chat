@@ -3,6 +3,6 @@ import { Person } from '../person';
 export interface Message {
   message: string;
   date: Date;
-  person: Person;
+  person?: Person;
   read?: boolean;
 }
