@@ -18,6 +18,10 @@ $nb-themes: nb-register-theme(
   dark
 );
 
+.nb-theme-dark nb-chat div.header {
+  padding: 0;
+}
+
 //override default theme css
 .nb-theme-dark nb-layout {
   nb-layout-header {
@@ -31,6 +35,7 @@ $nb-themes: nb-register-theme(
   }
   .layout {
     .layout-container {
+      padding-bottom: 5rem;
       .content {
         nb-layout-footer {
           nav.fixed {

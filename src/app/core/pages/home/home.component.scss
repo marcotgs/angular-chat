@@ -1,7 +1,10 @@
 .home-page {
   &--footer {
-    // .fixed {
     justify-content: start;
-    // }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040;
   }
 }

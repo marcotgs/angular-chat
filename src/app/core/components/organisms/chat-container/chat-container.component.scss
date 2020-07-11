@@ -1,0 +1,8 @@
+@use "bootstrap";
+
+nb-chat.chat {
+  height: calc(100vh - 14rem);
+  @media screen and (max-width: map-get(bootstrap.$grid-breakpoints, 'sm')) {
+    height: calc(100vh - 12rem);
+  }
+}

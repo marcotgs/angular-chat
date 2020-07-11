@@ -1,5 +1,26 @@
-<nb-card *ngFor="let messageBody of messages$ | async">
-  <nb-card-body>
-    {{ messageBody?.message }}
-  </nb-card-body>
-</nb-card>
+<!-- <div class="container">
+  <div
+    class="row d-flex"
+    *ngFor="let messageBody of messages$ | async; odd as cardLeft"
+    [ngClass]="{ 'justify-content-end card-right': !cardLeft }"
+  >
+    <div class="col-8 p-0">
+      <nb-card>
+        <nb-card-body>
+          {{ messageBody?.message }}
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+</div> -->
+
+<nb-chat size="giant" class="chat">
+  <nb-chat-message
+    *ngFor="let messageBody of messages$ | async"
+    type="text"
+    [message]="messageBody.message"
+    [sender]="messageBody?.person?.name"
+    [reply]="messageBody?.person?.id === (currentPerson$ | async)?.id"
+  >
+  </nb-chat-message>
+</nb-chat>

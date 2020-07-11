@@ -1,4 +1,6 @@
-@import './app/shared/scss/theme';
+@forward './bootstrap';
+@import './theme';
+@import './variables';
 
 @import '~@nebular/theme/styles/globals';
 
