@@ -6,7 +6,7 @@ import { NbActionsModule } from '@nebular/theme';
 import { NebularThemeModule } from '@shared/modules/nebular-theme.module';
 import { PERSON } from '@shared/constants';
 import { AppState } from '@store/app.state';
-import { setPerson } from '@store/chat';
+import { setPerson, readMessages } from '@store/chat';
 
 import { ChatPersonSwitcherComponent } from './chat-person-switcher.component';
 
@@ -60,9 +60,12 @@ describe('ChatPersonSwitcherComponent', () => {
     fixture.detectChanges();
 
     expect(actions[1].classes).toEqual({ active: true });
-    expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenCalledWith(
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy.calls.argsFor(0)).toEqual([
+      readMessages({ personId: PERSON.SECOND_PERSON.id }),
+    ]);
+    expect(dispatchSpy.calls.argsFor(1)).toEqual([
       setPerson({ person: PERSON.SECOND_PERSON }),
-    );
+    ]);
   });
 });

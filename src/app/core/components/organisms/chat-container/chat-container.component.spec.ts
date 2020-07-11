@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-import { NbCardModule } from '@nebular/theme';
+import { NbChatModule } from '@nebular/theme';
 
 import { NebularThemeModule } from '@shared/modules/nebular-theme.module';
 import { ChatContainerComponent } from './chat-container.component';
@@ -16,7 +16,7 @@ describe('ChatContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NebularThemeModule, NbCardModule],
+      imports: [NebularThemeModule, NbChatModule.forRoot()],
       declarations: [ChatContainerComponent],
       providers: [provideMockStore<AppState>({ initialState })],
     }).compileComponents();

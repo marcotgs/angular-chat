@@ -1,4 +1,8 @@
-import { selectChatCurrentPerson, selectChatMessages } from './chat.selectors';
+import {
+  selectChatCurrentPerson,
+  selectChatMessages,
+  selectNumberUnreadMessages,
+} from './chat.selectors';
 import { PERSON } from '@shared/constants';
 import { Message } from '@shared/models';
 
@@ -25,5 +29,24 @@ describe('ChatSelectors', () => {
         chat: { currentPerson: PERSON.FIRST_PERSON, messages: [message] },
       }),
     ).toEqual([message]);
+  });
+
+  it('should return number unread messages', () => {
+    const message: Message = {
+      date: new Date('2020-07-09'),
+      message: 'test',
+      person: {
+        name: 'Person 1',
+        id: 1,
+      },
+    };
+    expect(
+      selectNumberUnreadMessages(
+        {
+          chat: { currentPerson: PERSON.FIRST_PERSON, messages: [message] },
+        },
+        PERSON.FIRST_PERSON.id,
+      ),
+    ).toEqual(1);
   });
 });

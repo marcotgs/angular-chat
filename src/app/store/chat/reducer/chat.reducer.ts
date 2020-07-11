@@ -23,7 +23,7 @@ const _chatReducer = createReducer(
     return {
       ...state,
       messages: state.messages.map((message) =>
-        !message.read && message?.person?.id === payload.personId
+        !message.read && message?.person?.id !== payload.personId
           ? { ...message, read: true }
           : message,
       ),

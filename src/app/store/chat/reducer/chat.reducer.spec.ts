@@ -41,7 +41,7 @@ describe('ChatReducer', () => {
         readMessagesSuccess({ personId: PERSON.FIRST_PERSON.id }),
       ),
     ).toEqual({
-      messages: [{ ...messages[0], read: true }, messages[1]],
+      messages: [messages[0], { ...messages[1], read: true }],
     });
   });
 

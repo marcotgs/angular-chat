@@ -3,16 +3,24 @@
     <div class="col-12 d-flex justify-content-center">
       <nb-actions size="medium">
         <nb-action
+          [badgeText]="
+            currentPerson?.id === persons.SECOND_PERSON.id ? unreadMessages : ''
+          "
+          badgeStatus="info"
           [ngClass]="{
-            active: (currentPerson | async)?.id === persons.FIRST_PERSON.id
+            active: currentPerson?.id === persons.FIRST_PERSON.id
           }"
           (click)="changePerson(persons.FIRST_PERSON)"
         >
           {{ persons.FIRST_PERSON.name }}
         </nb-action>
         <nb-action
+          [badgeText]="
+            currentPerson?.id === persons.FIRST_PERSON.id ? unreadMessages : ''
+          "
+          badgeStatus="info"
           [ngClass]="{
-            active: (currentPerson | async)?.id === persons.SECOND_PERSON.id
+            active: currentPerson?.id === persons.SECOND_PERSON.id
           }"
           (click)="changePerson(persons.SECOND_PERSON)"
         >
